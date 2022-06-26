@@ -1,38 +1,177 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+* {
+  color: rgb(255, 255, 255);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #1a202c;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.game-container {
+  height: 15vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+}
+
+.title-container {
+  text-align: center;
+  width: 100vw;
+}
+
+.title-container h1 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #e1e8f0;
+  font-size: 1.4rem;
+  /* margin-left: 15rem;
+  margin-top: 1px; */
+}
+
+.tile-container {
+  width: 500px;
+  margin-bottom: 20px;
+}
+
+.key-container {
+  width: 510px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.key-container button {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border: none;
+  text-transform: uppercase;
+  text-decoration-style: solid;
+  font-weight: 1000;
+  font-size: 16px;
+  font-size-adjust: inherit;
+  background-color: #2c323e;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 4px;
+  margin-bottom: 3px;
+  cursor: pointer;
+  transition: 0.4s all ease;
+}
+
+.key-container button:nth-child(11) {
+  margin-left: 55px;
+}
+
+.key-container button:nth-child(16),
+.key-container button:nth-child(17) {
+  width: 70px;
+}
+
+.tile-container div {
+  display: flex;
+}
+
+.tile-container .tile {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #272d39;
+  background-color: #1a202c;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-weight: 1000;
+  align-items: center;
+  color: #1a202c;
+  margin: 3px;
+  font-size: 18px;
+  animation: animate 1s linear;
+  animation-delay: var(--i) s;
+  /* -webkit-border-radius: 6px; */
+  /* -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px; */
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes animate {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
+}
+.tile-container .tile.tile-with-data {
+  background-color: #e1e8f0;
+  color: #1a202c;
+  transition: 0.6s all ease;
+}
+.message-container {
+  height: 60px;
+  margin-right: 50px;
+  margin-bottom: 30px;
+}
+
+.message-container p {
+  background-color: rgb(226, 232, 240);
+  color: #1a202c;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px;
+}
+
+.tile .flip {
+  animation: 1s linear flipping;
+  -webkit-animation: 1s linear flipping;
+}
+
+@keyframes flipping {
+  0% {
+    transform: rotateX(0deg);
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+    -o-transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(90deg);
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    -ms-transform: rotateX(90deg);
+    -o-transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+    -o-transform: rotateX(0deg);
+  }
+}
+
+.black-overlay {
+  background-color: rgb(153, 149, 149) !important;
+  border: none !important;
+  /* color: #fff !important; */
+  color: #1a202c !important;
+}
+
+.yellow-overlay {
+  background-color: #f8f18a !important;
+  border: none !important;
+  color: #1a202c !important;
+}
+
+.green-overlay {
+  background-color: #9ae6b5 !important;
+  border: none !important;
+  /* color: #fff !important; */
+  color: #1a202c !important;
 }
