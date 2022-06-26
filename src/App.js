@@ -3,6 +3,7 @@ import "./App.css";
 import Board from "./components/Board";
 import Keyboard from "./components/Keyboard";
 import axios from "axios";
+import Rules from "./components/Rules";
 
 function App() {
   const wordAle = "2*3+5=11";
@@ -54,7 +55,7 @@ function App() {
         }
       );
       if (answer.data.correct) {
-        setMessage("You're awesome:)");
+        setMessage("You Won.You're awesome:)");
         setIsGameOver(true);
         return;
       } else {
@@ -136,6 +137,7 @@ function App() {
           addLetter={addLetter}
         />
       </div>
+      <Rules />
     </div>
   );
 }
