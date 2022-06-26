@@ -7,12 +7,14 @@ This app is the clone of famous nurdle game where you need to guess calculation.
 Frontend= ReactJs
 Backend= NodeJs,ExpressJs
 
-Frontend Deployed on netlify
+Frontend Deployed on [netlify](https://nerdle-game99.netlify.app)
 Backend deployed on [Heroku](https://api-nerdle.herokuapp.com)
 
 ## How to use application
 
-=> Clone this repo and
+=> Clone this repo (https://github.com/vinayaviator95/Nerdle-Game.git)
+=> Install dependency by running command `npm i`
+=> To start the app `npm start`
 
 ## Game Rules
 
